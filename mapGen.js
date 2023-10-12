@@ -28,9 +28,9 @@ Object.values(img).slice(1).forEach((imgRows,x)=>{
             var color="ocean";
             //console.log(Object.values(pixel).slice(0,-1),[0,171,61],[0,171,61]==[0,171,61],Object.values(pixel).slice(0,-1)==[0,171,61])
             if(JSON.stringify(Object.values(pixel).slice(0,-1))==JSON.stringify([0,171,61])){
-                color ="PgH9Mr1DWW5Qgp"
+                color ="grass"
             }else if(JSON.stringify(Object.values(pixel).slice(0,-1))==JSON.stringify([255,255,255])){
-                color ="id2fWqw7gGj1QC9"
+                color ="snow"
             }
             /*Object.values(colors).forEach((colorVal,index)=>{
                 console.log(colors[Object.keys(colors)[index]],Object.values(pixel).slice(0,-1),colors[Object.keys(colors)[index]]===Object.values(pixel).slice(0,-1))
@@ -41,21 +41,10 @@ Object.values(img).slice(1).forEach((imgRows,x)=>{
             pixelObj.tile= color
             //console.log(pixelObj.tile)*/
             if(!(color=="ocean")){
-            file.push(`
-            - x: ${pixelObj.x}
-                'y': ${pixelObj.y}
-                opacity: 1
-                tint: 16777215
-                scale:
-                    x: 1
-                    'y': 1
-                frame: 0
-                rotation: 0
-                texture: PgH9Mr1DWW5Qgp
-            `)}
+            file.push(pixelObj)}
         }
     })
 })
- fs.writeFileSync("./map.ict",file.join('')) 
+ fs.writeFileSync("./tiles",JSON.stringify(file)) 
 }
 main()
