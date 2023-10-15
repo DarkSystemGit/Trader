@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/DarkSystemGit/Trader#readme",
   "dependencies": {
-    "jimp": "^0.22.10"
+    "jimp": "^0.22.10",
+    "js-yaml": "^3.14.0",
+    "yaml": "^2.3.3"
   }
 }
