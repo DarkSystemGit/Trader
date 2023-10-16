@@ -3,8 +3,14 @@ const yaml = require('js-yaml')
 async function main(){
 function getPixels1D(img){return new Promise((resolve)=>{require('png-js').decode(img,(img)=>resolve(img))})};
 async function getPixels(img,size){
+    const toMatrix = (arr, width) => 
+    arr.reduce((rows, key, index) => (index % width == 0 ? rows.push([key]) 
+      : rows[rows.length-1].push(key)) && rows, []);
     var raw = await getPixels1D(img)
-    raw.forEach((pixel)=>{})
+    raw.forEach((pixel,i)=>{
+        var x = Math.floor(i/size.width)
+        
+    })
 }
 var colors={grass:[0,171,61],snow:[255,255,255]}
 var img={}
