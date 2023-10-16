@@ -1,24 +1,30 @@
-const Jimp = require('jimp')
 const fs = require('fs')
 const yaml = require('js-yaml')
 async function main(){
-const image = await Jimp.read(process.argv[2]);
+function getPixels1D(img){return new Promise((resolve)=>{require('png-js').decode(img,(img)=>resolve(img))})};
+async function getPixels(img,size){
+    var raw = await getPixels1D(img)
+    raw.forEach((pixel)=>{})
+}
 var colors={grass:[0,171,61],snow:[255,255,255]}
 var img={}
-for(var x=0;x<image.bitmap.height;x++){
-    img[x]=[]
-    for(var y=0;y<image.bitmap.width;y++){
-        //img[x].push(Jimp.intToRGBA(image.getPixelColor(x, y)))
-        var tmp=Jimp.intToRGBA(image.getPixelColor(x, y))
-        //console.log(img.colors.indexOf(tmp))
-        
-        img[x].push(tmp)
-    }
-}
-if((x==320)&&(y==180)){
-    console.log('correct size')
+image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
+  // x, y is the position of this pixel on the image
+  // idx is the position start position of this rgba tuple in the bitmap Buffer
+  // this is the image
+    
+  var red = this.bitmap.data[idx + 0];
+  var green = this.bitmap.data[idx + 1];
+  var blue = this.bitmap.data[idx + 2];
+  var alpha = this.bitmap.data[idx + 3];
+    if(!img[x]){img[x]=[]}
+    img[x].push([red,green,blue,alpha])
+  // rgba values run from 0 - 255
+  // e.g. this.bitmap.data[idx] = 0; // removes red from this pixel
+});
 
-}
+fs.writeFileSync('img.bin',image.bitmap.data.toString().match(/(.|[\r\n]){1,4}/g).join())
+   
 //var pixelObj ={x:"",y:"",tile:""}
 var file=[]
 Object.values(img).forEach((imgRows,x)=>{

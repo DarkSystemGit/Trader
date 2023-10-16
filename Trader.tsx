@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="Game" tilewidth="17" tileheight="17" tilecount="1901" columns="0">
+<tileset version="1.10" tiledversion="1.10.2" name="Game" tilewidth="17" tileheight="17" tilecount="1902" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="199">
   <image width="16" height="16" source="gfx/tiny_battle/tile_0000.png"/>
@@ -5703,5 +5703,8 @@
  </tile>
  <tile id="2163">
   <image width="17" height="17" source="gfx/rougelike/tile686.png"/>
+ </tile>
+ <tile id="2164">
+  <image width="16" height="16" source="gfx/custom/snow.png"/>
  </tile>
 </tileset>

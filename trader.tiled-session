@@ -17,12 +17,15 @@
             "scale": 0.0791015625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 6320.9876543209875,
-                "y": 1624.4938271604938
+                "x": 2876.0493827160494,
+                "y": 2680.098765432098
             }
+        },
+        "map.tmx#Game": {
+            "scaleInDock": 1
         }
     },
-    "last.imagePath": "/home/pdarksystem/Trader/gfx/rougelike",
+    "last.imagePath": "/home/pdarksystem/Trader/gfx/custom",
     "map.height": 270,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
