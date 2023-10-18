@@ -5846,11 +5846,12 @@ templates:
           this.move();
         arguments: {}
       - eventKey: OnCreate
-        code: |
+        code: |-
           this.angle=0
           this.speed=0
           this.x =0
           this.y =0
+          this.scale =0.1
         arguments: {}
         lib: core
       - eventKey: OnActionDown
@@ -5901,12 +5902,12 @@ rooms:
     onstep: ''
     ondraw: ''
     onleave: ''
-    gridX: 16
-    gridY: 16
+    gridX: 64
+    gridY: 64
     diagonalGrid: false
     simulate: true
-    width: 320
-    height: 270
+    width: 32
+    height: 27
     restrictCamera: false
     restrictMaxX: 1280
     restrictMinX: 1280
@@ -5940,8 +5941,8 @@ rooms:
         scaleY: 1
         repeat: repeat
     copies:
-      - x: 6626.173661238827
-        'y': -20863.60612809644
+      - x: -576
+        'y': -128
         opacity: 1
         tint: 16777215
         scale:
@@ -5951,8 +5952,8 @@ rooms:
         uid: T7JN6TtNw8CDCK
         exts: {}
         customProperties: {}
-      - x: 44488.225595575095
-        'y': -20543.949132222733
+      - x: -576
+        'y': -128
         opacity: 1
         tint: 16777215
         scale:
@@ -5962,77 +5963,22 @@ rooms:
         uid: T7JN6TtNw8CDCK
         exts: {}
         customProperties: {}
-      - x: -1801.886820952379
-        'y': 5929.037228228761
+      - x: -448
+        'y': 64
         opacity: 1
         tint: 16777215
         scale:
           x: 1
           'y': 1
-        rotation: 0
-        uid: T7JN6TtNw8CDCK
-        exts: {}
-        customProperties: {}
-      - x: -1801.886820952379
-        'y': 5929.037228228761
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: T7JN6TtNw8CDCK
-        exts: {}
-        customProperties: {}
-      - x: -2043.13205385637
-        'y': 3797.812312693784
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: T7JN6TtNw8CDCK
-        exts: {}
-        customProperties: {}
-      - x: -2043.13205385637
-        'y': 3797.812312693784
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: T7JN6TtNw8CDCK
-        exts: {}
-        customProperties: {}
-      - x: -2043.13205385637
-        'y': 3797.812312693784
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 1
-          'y': 1
-        rotation: 0
-        uid: T7JN6TtNw8CDCK
-        exts: {}
-        customProperties: {}
-      - x: -3024.522450115324
-        'y': 2392.5285420377413
-        opacity: 1
-        tint: 16777215
-        scale:
-          x: 0.01
-          'y': 0.01
         rotation: 0
         uid: T7JN6TtNw8CDCK
         exts: {}
         customProperties: {}
     tiles: []
     extends: {}
-    lastmod: 1697668898947
+    lastmod: 1697669428242
     events: []
-    uid: NNKkmQqmnPDdcb
+    uid: C4qhFF6DfcF8nP
 actions:
   - name: MoveX-
     methods:
@@ -6054,7 +6000,7 @@ actions:
       - code: keyboard.KeyW
 emitterTandems: []
 scripts: []
-startroom: -1
+startroom: C4qhFF6DfcF8nP
 contentTypes: []
 groups:
   fonts: []
