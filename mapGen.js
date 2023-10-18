@@ -12,29 +12,20 @@ async function getPixels(img,size){
     }
     var raw = await getPixels1D(img)
     raw = toMatrix(raw,size[0])
-    raw.forEach((pixel,i)=>{
-        var x = Math.floor(i/size.width)
+    img ={}
+    raw.forEach((pixels,x)=>{
+        img[x]=[]
+        pixels.forEach((pixel,y)=>{
+            img[x][y]=pixel
+        })
         
     })
 }
+var img = getPixels(process.argv[2],[320])    
 var colors={grass:[0,171,61],snow:[255,255,255]}
-var img={}
-image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, idx) {
-  // x, y is the position of this pixel on the image
-  // idx is the position start position of this rgba tuple in the bitmap Buffer
-  // this is the image
-    
-  var red = this.bitmap.data[idx + 0];
-  var green = this.bitmap.data[idx + 1];
-  var blue = this.bitmap.data[idx + 2];
-  var alpha = this.bitmap.data[idx + 3];
-    if(!img[x]){img[x]=[]}
-    img[x].push([red,green,blue,alpha])
-  // rgba values run from 0 - 255
-  // e.g. this.bitmap.data[idx] = 0; // removes red from this pixel
-});
 
-fs.writeFileSync('img.bin',image.bitmap.data.toString().match(/(.|[\r\n]){1,4}/g).join())
+
+//fs.writeFileSync('img.bin',image.bitmap.data.toString().match(/(.|[\r\n]){1,4}/g).join())
    
 //var pixelObj ={x:"",y:"",tile:""}
 var file=[]
